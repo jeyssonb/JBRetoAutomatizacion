@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -39,6 +40,8 @@ public class ReporteER extends Variables {
 			break;
 		case 2:
 			testER.log(LogStatus.FATAL, message, testER.addScreenCapture(screenCaptureRE(driver)) + msgScreen);
+			driver.close();
+			Assert.fail();
 			break;
 		case 3:
 			testER.log(LogStatus.INFO, message, testER.addScreenCapture(screenCaptureRE(driver)) + msgScreen);

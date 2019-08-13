@@ -1,12 +1,9 @@
 package Paginas;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Reporte.ReporteER;
 import Variables.Variables;
 
@@ -46,13 +43,13 @@ public class CarritoPop extends Variables {
 				
 				if (datos[0].equals(descrp) && datos[2].equals(talla) && datos[3].equals(unidades)) {
 					ReporteER.LogReportER("Carrito - Se valido correctamente los sgtes datos: " + datos[0] + "Precio: " + datos[1] + 
-							", Talla: " + datos[2] + ", Cantidad: " + datos[3] + ", Costo producto(s): " + datos[4] + ", Costo Envio: " +
-							datos[5] + ", Valor Total: " + datos[6], 1, "Paso exitoso");
+						", Talla: " + datos[2] + ", Cantidad: " + datos[3] + ", Costo producto(s): " + datos[4] + ", Costo Envio: " +
+						datos[5] + ", Valor Total: " + datos[6], 1, "Paso exitoso");
 					driver.findElement(btnContinuar).click();
 				} else {
 					ReporteER.LogReportER("Carrito - Hubo un error al validar los valores del producto: " + datos[0] + "Precio: " + datos[1] + 
-					", Talla: " + datos[2] + ", Cantidad: " + datos[3] + ", Costo producto(s): " + datos[4] + ", Costo Envio: " + 
-					datos[5] + ", Valor Total: " + datos[6], 2, "Paso fallido");
+						", Talla: " + datos[2] + ", Cantidad: " + datos[3] + ", Costo producto(s): " + datos[4] + ", Costo Envio: " + 
+						datos[5] + ", Valor Total: " + datos[6], 2, "Paso fallido");
 				}
 				
 			} else {

@@ -9,8 +9,9 @@ import Variables.Variables;
 
 public class Principal extends Variables
 {
-    
-	private static By lblUltra = By.xpath("//div[@class=\"content___3Uzc5\"]/div[2]/h1[contains(text(),'ULTRABOOST 19')]");
+	
+	private static By lblUltra = By.xpath("//a[contains(@class, 'logo___1TaAn big___1r9-V')]");
+//	private static By lblUltra = By.xpath("//div[@class=\"content___3Uzc5\"]/div[2]/h1[contains(text(),'ULTRABOOST 19')]");
 	private static By txtBuscar = By.xpath("//input[contains(@class, 'searchinput___3ump9')]");
 	private static By btnBuscar = By.xpath("//div[contains(@class, 'search-icon___izpuX')]");
 	private static By btnResult1 = By.xpath("//li[contains(@class, 'product___3VZEy')][1]/a");
@@ -28,6 +29,7 @@ public class Principal extends Variables
 					driver.findElement(btnResult1).click();
 				} else {
 					ReporteER.LogReportER("Acceso a producto - Hubo un error al acceder al resultado del producto consultado.", 2, "Paso fallido");
+					
 				}
 			} else {
 				ReporteER.LogReportER("Consulta de producto - Hubo un error al consultar el producto: " + busqueda + "en la página seleccionada.", 2, "Paso fallido");
